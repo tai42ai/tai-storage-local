@@ -1,11 +1,11 @@
-# Contributing to tai-storage-local
+# Contributing to tai42-storage-local
 
-`tai-storage-local` is the local-filesystem **Storage** backend for the TAI
-ecosystem: it implements `tai_contract.storage.Storage` over a directory tree on
+`tai42-storage-local` is the local-filesystem **Storage** backend for the TAI
+ecosystem: it implements `tai42_contract.storage.Storage` over a directory tree on
 the local disk, serving both text and binary content. The hard rule (the plugin
-rule): **it depends on `tai-contract` + `tai-kit` only and never imports the
-skeleton.** Importing the `tai_storage_local` package fires the
-`@tai_app.storage.register_storage` decorator on `LocalStorage` as a side-effect,
+rule): **it depends on `tai42-contract` + `tai42-kit` only and never imports the
+skeleton.** Importing the `tai42_storage_local` package fires the
+`@tai42_app.storage.register_storage` decorator on `LocalStorage` as a side-effect,
 so naming the package in a manifest's `storage_module` activates it — there is no
 import edge to the skeleton in either direction.
 
@@ -14,7 +14,7 @@ import edge to the skeleton in either direction.
 - **No skeleton import — ever.** The package is contract-facing; the ban is
   enforced by ruff (`flake8-tidy-imports`), so a stray import fails lint:
   ```bash
-  grep -rn "tai_skeleton" src/   # must be empty
+  grep -rn "tai42_skeleton" src/   # must be empty
   ```
 - **Every path stays under the root.** A stored path is resolved under the
   configured root and rejected if it escapes it (a path-boundary check, not a

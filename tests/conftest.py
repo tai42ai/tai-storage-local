@@ -1,8 +1,8 @@
-"""Bind a minimal ``tai_app`` impl before the backend is imported.
+"""Bind a minimal ``tai42_app`` impl before the backend is imported.
 
-``tai_storage_local.storage`` registers ``LocalStorage`` through
-``tai_app.storage.register_storage`` at import time. The real handle raises until
-the runtime calls ``tai_app.bind(app)`` at startup, so tests supply a light stub
+``tai42_storage_local.storage`` registers ``LocalStorage`` through
+``tai42_app.storage.register_storage`` at import time. The real handle raises until
+the runtime calls ``tai42_app.bind(app)`` at startup, so tests supply a light stub
 exposing only the ``storage.register_storage`` seam the backend needs. Binding at
 conftest import time runs before any test module imports the backend.
 """
@@ -13,8 +13,8 @@ from collections.abc import Callable, Iterator
 from pathlib import Path
 
 import pytest
-from tai_contract.app import tai_app
-from tai_contract.storage import Storage
+from tai42_contract.app import tai42_app
+from tai42_contract.storage import Storage
 
 
 class _StorageFacet:
@@ -41,7 +41,7 @@ class _StubApp:
 
 
 _stub_app = _StubApp()
-tai_app.bind(_stub_app)
+tai42_app.bind(_stub_app)
 
 
 @pytest.fixture
@@ -53,7 +53,7 @@ def registered_provider() -> Storage | None:
 @pytest.fixture
 def storage_root(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> Iterator[Path]:
     """Point the env-driven settings at a temp dir and clear the settings cache."""
-    from tai_storage_local.settings import storage_settings
+    from tai42_storage_local.settings import storage_settings
 
     monkeypatch.setenv("STORAGE_LOCAL_ROOT_PATH", str(tmp_path))
     monkeypatch.setenv("STORAGE_LOCAL_CREATE_DIRS", "true")

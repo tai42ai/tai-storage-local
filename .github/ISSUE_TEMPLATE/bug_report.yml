@@ -1,5 +1,5 @@
 name: Bug report
-description: Report a defect in tai-storage-local (the local-filesystem Storage backend)
+description: Report a defect in tai42-storage-local (the local-filesystem Storage backend)
 labels: ["bug"]
 body:
   - type: textarea
@@ -20,7 +20,7 @@ body:
   - type: input
     id: version
     attributes:
-      label: tai-storage-local version
+      label: tai42-storage-local version
       placeholder: "0.1.0"
     validations:
       required: true
@@ -28,7 +28,7 @@ body:
     id: environment
     attributes:
       label: Environment
-      description: Python version, OS, the host tai-skeleton version, and the configured root path.
+      description: Python version, OS, the host tai42-skeleton version, and the configured root path.
       placeholder: "Python 3.13.x, macOS 15"
     validations:
       required: true

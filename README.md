@@ -1,10 +1,10 @@
-# tai-storage-local
+# tai42-storage-local
 
 [![CI](https://github.com/tai42ai/tai-storage-local/actions/workflows/ci.yml/badge.svg)](https://github.com/tai42ai/tai-storage-local/actions/workflows/ci.yml)
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
 
 Local-filesystem storage backend for the TAI ecosystem. It implements the
-`tai_contract.storage.Storage` contract over a directory tree on the local disk,
+`tai42_contract.storage.Storage` contract over a directory tree on the local disk,
 serving both text and binary content, and registers itself as the active storage
 provider when its package is imported.
 
@@ -13,8 +13,8 @@ provider when its package is imported.
 TAI is an open-source runtime for MCP tools, agents, and workflows. A `Storage`
 backend answers the question of *where content physically lives* — a template, a
 document, or a media file loaded by `id`. This package is the local-filesystem
-implementation; siblings back the same contract with S3 (`tai-storage-s3`) and
-GitHub (`tai-storage-github`). The ecosystem is open-ended: any package can back
+implementation; siblings back the same contract with S3 (`tai42-storage-s3`) and
+GitHub (`tai42-storage-github`). The ecosystem is open-ended: any package can back
 the same contract, so this repo is this provider's own full doc home, and the
 documentation site covers the platform-level story:
 
@@ -25,24 +25,24 @@ documentation site covers the platform-level story:
 ## Install
 
 Requires **Python 3.13+**. Nothing is on PyPI yet, so install from source — clone
-this repo alongside your `tai-skeleton` checkout and add it as an editable
+this repo alongside your `tai42-skeleton` checkout and add it as an editable
 dependency of the environment that runs the server:
 
 ```bash
 git clone https://github.com/tai42ai/tai-storage-local
 cd tai-skeleton   # or your own app checkout
-uv add --editable ../tai-storage-local   # once published: uv add tai-storage-local
+uv add --editable ../tai-storage-local   # once published: uv add tai42-storage-local
 ```
 
 ## Discovery
 
 A backend is activated by a manifest, not an entry point. Name this package in the
 manifest's `storage_module` field; the runtime imports it, and the
-`@tai_app.storage.register_storage` decorator fires as an import side-effect to
+`@tai42_app.storage.register_storage` decorator fires as an import side-effect to
 register `LocalStorage` as the active provider:
 
 ```yaml
-storage_module: tai_storage_local
+storage_module: tai42_storage_local
 ```
 
 There is no auto-discovery — importing the package *is* the registration.

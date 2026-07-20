@@ -6,8 +6,8 @@ import os
 
 import pytest
 
-import tai_storage_local.driver as driver_module
-from tai_storage_local.driver import AsyncLocalDriver
+import tai42_storage_local.driver as driver_module
+from tai42_storage_local.driver import AsyncLocalDriver
 
 
 def _driver(tmp_path, create_dirs: bool = True) -> AsyncLocalDriver:

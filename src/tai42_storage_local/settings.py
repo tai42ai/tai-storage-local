@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 from pydantic_settings import SettingsConfigDict
-from tai_kit.settings import TaiBaseSettings, settings_cache
+from tai42_kit.settings import TaiBaseSettings, settings_cache
 
 
 class LocalStorageSettings(TaiBaseSettings):

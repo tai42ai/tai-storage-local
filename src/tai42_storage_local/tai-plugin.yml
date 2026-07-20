@@ -1,7 +1,7 @@
 spec_version: 1
 namespace: tai42
 name: storage-local
-package: tai-storage-local
+package: tai42-storage-local
 version: 0.1.0
 description: "Local-filesystem storage backend for the TAI ecosystem: a manifest-loaded Storage plugin serving text and binary content from a directory tree."
 license: Apache-2.0
@@ -17,6 +17,6 @@ permissions:
 provides:
   - kind: storage
     name: local
-    module: tai_storage_local
+    module: tai42_storage_local
     description: "Storage backend serving text and binary content from a local directory tree."
     tags: [filesystem]

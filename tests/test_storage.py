@@ -5,10 +5,10 @@ from __future__ import annotations
 import os
 
 import pytest
-from tai_contract.storage import ObjectStat, Storage
+from tai42_contract.storage import ObjectStat, Storage
 
-from tai_storage_local.settings import storage_settings
-from tai_storage_local.storage import LocalStorage
+from tai42_storage_local.settings import storage_settings
+from tai42_storage_local.storage import LocalStorage
 
 
 @pytest.fixture
