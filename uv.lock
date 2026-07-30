@@ -1270,7 +1270,7 @@ wheels = [
 
 [[package]]
 name = "tai42-storage-local"
-version = "0.2.0"
+version = "0.2.1"
 source = { editable = "." }
 dependencies = [
     { name = "aiofiles" },
@@ -1293,7 +1293,7 @@ dev = [
 requires-dist = [
     { name = "aiofiles", specifier = ">=24" },
     { name = "pydantic-settings", specifier = ">=2.11" },
-    { name = "tai42-contract", specifier = ">=0.2,<0.3" },
+    { name = "tai42-contract", specifier = ">=0.2,<0.4" },
     { name = "tai42-kit", specifier = ">=0.2,<0.3" },
 ]
 
