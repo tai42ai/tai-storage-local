@@ -17,7 +17,7 @@ from tai42_storage_local.settings import storage_settings
 logger = logging.getLogger(__name__)
 
 
-# Importing this module registers LocalStorage as the active storage provider.
+# Importing this module registers LocalStorage in the storage provider registry.
 @tai42_app.storage.register_storage
 class LocalStorage(Storage):
     def _driver(self) -> AsyncLocalDriver:
