@@ -3,6 +3,10 @@ name: release-please
 on:
   push:
     branches: [main]
+  # Rebuilding an open release PR needs a run: release-please only
+  # force-pushes its branch when it re-evaluates, and a config change
+  # alone does not push to main.
+  workflow_dispatch:
 
 permissions:
   contents: read
