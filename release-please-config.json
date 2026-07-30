@@ -5,7 +5,11 @@
   "packages": {
     ".": {
       "skip-changelog": true,
-      "package-name": "tai42-storage-local"
+      "package-name": "tai42-storage-local",
+      "extra-files": [
+        "tai-plugin.yml",
+        "src/tai42_storage_local/tai-plugin.yml"
+      ]
     }
   }
 }
